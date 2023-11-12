@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <h1>Formulario de Pedido de Pizza</h1>
+      <form id="pizzaForm" action="" onsubmit="if (validarFormulario() && calcularPrecio()) return false; else return true;">
+
+ <!-- Campos del formulario -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" /><br /><br />
+
+        <label for "telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br/><br/>
+
+<!-- Opciones de tamaño de la pizza -->
+        <label>Tamaño de la Pizza:</label><br/>
+        <div id="tamanos-container"></div><br/>
+
+<!-- Opciones de ingredientes de la pizza -->
+<label>Ingredientes:</label><br />
+<div id="ingredientes-container"></div>
+<br />
+
+
+</form>
+
+<p>Precio Total del Pedido: <span id="precioTotal">0€</span></p>
+
+<!-- Botón de Procesar Pedido -->
+<input type="button" value="Procesar Pedido" onclick="calcularPrecio()" />
+
+<!-- Contenedor para mostrar el precio total -->
+
+
+<!-- Botón de Refrescar -->
+    <button id="btnRefresh" onclick="actualizarDatos()">Refrescar Datos</button>
+    </div>
+  </body>
+</html>
